@@ -1,10 +1,10 @@
 sudo: required
 dist: trusty
 language: c
-compiler:
-- clang
-- gcc
+compiler: clang
 cache: ccache
+git:
+  submodules: false
 
 install:
 - sudo apt-get install cmake clang bison flex xz-utils libfuse-dev libudev-dev pkg-config linux-headers-generic
