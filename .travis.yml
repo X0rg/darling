@@ -7,7 +7,7 @@ git:
   submodules: false
 
 install:
-- sudo apt-get install cmake clang bison flex xz-utils libfuse-dev libudev-dev pkg-config linux-headers-generic build-essential flex libelf-dev libc6-dev-amd64 binutils-dev libdwarf-dev
+- sudo apt-get install cmake clang bison flex xz-utils libfuse-dev libudev-dev pkg-config linux-headers-generic build-essential libc6-dev-i386
 
 before_script:
 - sed -i 's|url = ../|url = https://github.com/darlinghq/|g' .gitmodules
