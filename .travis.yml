@@ -15,5 +15,10 @@ before_script:
 - cmake .. -DCMAKE_TOOLCHAIN_FILE=../Toolchain.cmake
 script:
 - make -j $(nproc)
+- cd ../src/lkm
+- make -j $(nproc)
 after_success:
 - sudo make install
+- cd ../../build
+- sudo make install
+- darling shell echo "Hello world"
