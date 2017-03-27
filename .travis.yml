@@ -1,0 +1,19 @@
+sudo: required
+dist: trusty
+language: c
+compiler:
+- clang
+- gcc
+cache: ccache
+
+install:
+- sudo apt-get install cmake clang bison flex xz-utils libfuse-dev libudev-dev pkg-config linux-headers-generic
+
+before_script:
+- mkdir build
+- cd build
+- cmake .. -DCMAKE_TOOLCHAIN_FILE=../Toolchain.cmake
+script:
+- make -j $(nproc)
+after_success:
+- sudo make install
